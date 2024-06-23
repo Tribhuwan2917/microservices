@@ -51,3 +51,21 @@ info:
     instanceNumber: '1'
     version: v1.0.1
     description: This Server Belong To HotalService, Which Provide Hotal Information To Users.
+#logging:
+#  level:
+#    com:
+#      pal:
+#        user_microservics:
+#          HotalServices:
+#            controller: DEBUG/OFF
+#logging:
+#  level:
+#    com:
+#      pal:
+#        user_microservics:
+#          HotalServices:
+#            controller:
+#             HotalController: WARN/ERROR
+#logging:
+#  level:
+#    root: OFF
