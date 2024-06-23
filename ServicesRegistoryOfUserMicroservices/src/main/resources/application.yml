@@ -1,0 +1,24 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+     defaultZone: http://localhost:900/eureka/
+server:
+  port: 900
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: 'true'
+info:
+  application:
+    name: RegistryServicesOfUserMicroServices
+    instanceNumber: '1'
+    version: v1.0.1
+    description: This Server Belong To Service Registry of UserMicroServices

@@ -1,0 +1,43 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: UserServices
+          uri: lb://UserServices
+#          uri: http://localhost:8084 Not recomnded to use
+          predicates:
+            - Path=/user-services/v1/Users/**,/user-services/v1/Clients/**
+
+
+        - id: HotalServices
+          uri: lb://HotalServices
+          predicates:
+            - Path=/user-services/v1/Hotals/**
+
+
+        - id: RatingServices
+          uri: lb://RatingServices
+          predicates:
+            - Path=/user-services/v1/Ratings/**
+  application:
+    name: UserMicroservicesAPIGateway
+  config:
+    import: configserver:http://localhost:8085
+  profiles:
+    active: default
+server:
+  port: 8084
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: 'true'
+info:
+  application:
+    name: APIGateWayOfUserMicroServices
+    instanceNumber: '1'
+    version: v1.0.1
+    description: This Server Belong To APIGateWayOfUserMicroServices, which Manage URL Of MicroServices\

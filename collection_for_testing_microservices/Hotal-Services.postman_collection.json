@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "e0850caf-eb54-4ed4-bf43-4f0862644093",
+		"name": "Hotal-Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29386599"
+	},
+	"item": [
+		{
+			"name": "add-Hotal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"hotalId\":\"H0005\",\r\n    \"hotalName\":\"Geeta Hotal\",\r\n    \"hotalLocation\":\"Pune\",\r\n    \"hotalAbout\":\"Very good hotal\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/user-services/v1/Hotals/createHotal",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user-services",
+						"v1",
+						"Hotals",
+						"createHotal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateHotal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"hotalId\":\"H0001\",\r\n    \"hotalName\":\"Geeta Hotal\",\r\n    \"hotalLocation\":\"Mumbai Jaunpur\",\r\n    \"hotalAbout\":\"Very good hotal\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/user-services/v1/Hotals/updateHotal",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user-services",
+						"v1",
+						"Hotals",
+						"updateHotal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getHotalById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://HOTALSERVICES/user-services/v1/Hotals/getHotal/H0001",
+					"protocol": "http",
+					"host": [
+						"HOTALSERVICES"
+					],
+					"path": [
+						"user-services",
+						"v1",
+						"Hotals",
+						"getHotal",
+						"H0001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllHotals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/user-services/v1/Hotals/getAllHotals",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user-services",
+						"v1",
+						"Hotals",
+						"getAllHotals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteHotal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/user-services/v1/Hotals/deleteHotal/H0005",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user-services",
+						"v1",
+						"Hotals",
+						"deleteHotal",
+						"H0005"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

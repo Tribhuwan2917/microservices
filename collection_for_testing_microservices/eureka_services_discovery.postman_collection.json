@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "ea03080e-84e3-4b26-83b9-3008273b5ec1",
+		"name": "eureka_services_discovery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29386599"
+	},
+	"item": [
+		{
+			"name": "get_registration_of_all_instance_of_all_services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:900/eureka/apps",
+					"host": [
+						"localhost"
+					],
+					"port": "900",
+					"path": [
+						"eureka",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delta_call_to_get_registration_of_all_updated_services_only",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:900/eureka/apps/delta",
+					"host": [
+						"localhost"
+					],
+					"port": "900",
+					"path": [
+						"eureka",
+						"apps",
+						"delta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_registration_of_all_instance_of_a_single_service_by_instance_name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:900/eureka/apps/UserMicroservicesConfigServer",
+					"host": [
+						"localhost"
+					],
+					"port": "900",
+					"path": [
+						"eureka",
+						"apps",
+						"UserMicroservicesConfigServer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_registration_of_a_signgle_instance_a_services_by_instance_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:900/eureka/apps/UserMicroservicesConfigServer/localhost:UserMicroservicesConfigServer:8085",
+					"host": [
+						"localhost"
+					],
+					"port": "900",
+					"path": [
+						"eureka",
+						"apps",
+						"UserMicroservicesConfigServer",
+						"localhost:UserMicroservicesConfigServer:8085"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "how_set_a_particular_instance_out_of_services",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:900/eureka/apps/RATINGSERVICES/INBOOK_X1_SLIM:RatingServices:8083/status?value=OUT_OF_SERVICE",
+					"host": [
+						"localhost"
+					],
+					"port": "900",
+					"path": [
+						"eureka",
+						"apps",
+						"RATINGSERVICES",
+						"INBOOK_X1_SLIM:RatingServices:8083",
+						"status"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "OUT_OF_SERVICE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "how_set_instance_into_service_back_from_out_of_services",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:900/eureka/apps/RATINGSERVICES/INBOOK_X1_SLIM:RatingServices:8083/status?value=UP",
+					"host": [
+						"localhost"
+					],
+					"port": "900",
+					"path": [
+						"eureka",
+						"apps",
+						"RATINGSERVICES",
+						"INBOOK_X1_SLIM:RatingServices:8083",
+						"status"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "UP"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

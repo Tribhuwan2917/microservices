@@ -1,0 +1,120 @@
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    services-url:
+#     defaultZone: http://localhost:8761/eureka
+
+UserServices:
+  CreateUser: CreateUser
+  DeleteHotal:
+    feignURL: /user-services/v1/Hotals/deleteHotal/{hotalId}
+  DeleteUser: DeleteUser/{userId}
+  GetHotalByHotalId: http://HOTALSERVICES/user-services/v1/Hotals/getHotal/
+  GetHotalByHotalId.feignURL: /user-services/v1/Hotals/getHotal/{hotalId}
+  GetRatingURL: http://RATINGSERVICES/user-services/v1/Ratings/getRatingByUserId/
+  GetRatingURL.feignURL: /user-services/v1/Ratings/getRatingByUserId/{userId}
+  Get_All_Clients: GetAllClients
+  Get_All_Users: GetAllUsers
+  Get_By_User_Id: 'getByUserId/{userId} '
+  PostHotal:
+    feignURL: /user-services/v1/Hotals/createHotal
+  UpdateHotal:
+    feignURL: /user-services/v1/Hotals/updateHotal
+  UpdateUser: UpdateUser
+  base:
+    URL: /user-services/v1/Users/
+  client:
+    base:
+      URL: /user-services/v1/Clients/
+server:
+  port: 8081
+spring:
+  application:
+    name: UserServices
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/userservicesdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  config:
+    import: configserver:http://localhost:8085
+#  profiles:
+#    active: prod
+#  profiles:
+#    active: dev
+  profiles:
+    active: default
+#  application:
+#    name: UserServices
+# we can change profile mode q while running jar of microservices
+# remote configuration  will get more priority than local configuration.
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  web:
+    exposure:
+      include: health
+#      include: all
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: 'true'
+    health:
+      show-details: always
+resilience4j:
+  instance:
+   ratingHotalBreaker :
+      registerHealthIndicator: true
+      eventConsumerBufferSize: 10
+      failureRateThreshold: 50
+      minimumNumberOfCalls: 5
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 6
+      permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowType: COUNT_BASED
+      slidingWindowSize: 10
+
+resilience4j.timelimiter:
+  configs:
+    default:
+      timeoutDuration: 5s
+      cancelRunningFuture: true
+#retry:
+#  instance:
+#    ratingHotalRetry:
+#      maxAttempts: 3
+#      waitDuration: 5s
+#      max-attempts: 3
+#      wait-duration: 5s
+ratelimiter:
+  instances:
+    userRateLimiter:
+      limit-refresh-period: 1ns
+      limit-for-period: 1
+      timeout-duration: 2ns
+#      registerHealthIndicator: false
+info:
+  application:
+    name: UserService
+    instanceNumber: '1'
+    version: v1.0.1
+    description: This Server Belong To UserServices of UserMicroServices
+
+
+
+
+

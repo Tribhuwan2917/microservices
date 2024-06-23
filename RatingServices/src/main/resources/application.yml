@@ -1,0 +1,60 @@
+ratingServices:
+  base:
+    URL: /user-services/v1/Ratings/
+  createRating: addRating
+  deleteRating: deleteRating/{ratingId}
+  getAllRating: getAllRating
+  getHotalById: http://localhost:8082/user-services/v1/Hotals/Gethotal/
+  getRatingById:
+    URL: getRatingById/{ratingId}
+  getRatingByUserId: getRatingByUserId/{userId}
+  updateRating: updateRating
+server:
+  port: 8083
+spring:
+  application:
+    name: RatingServices
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/userservicesdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  config:
+    import: configserver:http://localhost:8085
+  profiles:
+    active: default
+eureka:
+  instance:
+    metadata-map:
+      name: Tribhuwan_pal
+      configPath: /Ratings
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: 'true'
+info:
+  application:
+    name: RatingService
+    instanceNumber: '1'
+    version: v1.0.1
+    description: This Server Belong To RatingServices, which Provide Rating To Hotals
+
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:900/eureka/
+#  instance:
+#    prefer-ip-address: true
