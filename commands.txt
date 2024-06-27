@@ -1,0 +1,769 @@
+==================================================================Docker Commands===========================================================================
+Here is a comprehensive list of Docker commands, grouped by category:
+
+Container Management:-
+
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]: Run a new container from an image.
+docker start [CONTAINER]: Start a stopped container.
+docker stop [CONTAINER]: Stop a running container.
+docker restart [CONTAINER]: Restart a running container.
+docker rm [CONTAINER]: Remove a stopped container.
+docker pause [CONTAINER]: Pause a running container.
+docker unpause [CONTAINER]: Unpause a paused container.
+docker attach [CONTAINER]: Attach to a running container.
+docker exec [CONTAINER] [COMMAND]: Execute a command in a running container.
+docker top [CONTAINER]: Display the running processes of a container.
+docker stats [CONTAINER]: Display the resource usage of a container.
+docker inspect [CONTAINER]: Display detailed information about a container.
+docker logs [CONTAINER]: Display the logs of a container.
+
+Image Management:-
+
+docker pull [IMAGE]: Pull an image from a registry.
+docker push [IMAGE]: Push an image to a registry.
+docker build [OPTIONS] PATH | URL | -: Build an image from a Dockerfile.
+docker tag [IMAGE] [NEW_IMAGE]: Tag an image with a new name.
+docker rmi [IMAGE]: Remove an image.
+docker images: List all images.
+docker history [IMAGE]: Display the history of an image.
+docker search [TERM]: Search for images on Docker Hub.
+
+Volume Management:-
+
+docker volume create [VOLUME]: Create a new volume.
+docker volume ls: List all volumes.
+docker volume inspect [VOLUME]: Display detailed information about a volume.
+docker volume rm [VOLUME]: Remove a volume.
+docker volume prune: Remove all unused volumes.
+
+Network Management:-
+
+docker network create [NETWORK]: Create a new network.
+docker network ls: List all networks.
+docker network inspect [NETWORK]: Display detailed information about a network.
+docker network rm [NETWORK]: Remove a network.
+docker network prune: Remove all unused networks.
+
+System Management:-
+
+docker info: Display system-wide information.
+docker version: Display the Docker version.
+docker system df: Display disk usage.
+docker system prune: Remove all unused containers, networks, and volumes.
+docker system events: Display system events.
+
+Security Management:-
+
+docker login [REGISTRY]: Log in to a registry.
+docker logout [REGISTRY]: Log out of a registry.
+docker trust [IMAGE]: Manage trust for an image.
+docker content trust [COMMAND]: Manage content trust.
+
+Other Commands:-
+
+docker help: Display help for a command.
+docker --version: Display the Docker version.
+docker --help: Display help for Docker.
+Note: This list is not exhaustive, and new commands may be added in future versions of Docker.
+
+
+=========================================================Kafka commands=====================================================================================
+
+
+Here is a comprehensive list of Kafka commands, grouped by category:
+
+Cluster Management:-
+
+kafka-topics --list: List all topics in the cluster.
+kafka-topics --create <topic_name> --partitions <num_partitions> --replication-factor <replication_factor>: Create a new topic.
+kafka-topics --describe <topic_name>: Describe a topic, including its partitions and leaders.
+kafka-topics --alter <topic_name> --partitions <new_num_partitions>: Alter the number of partitions for a topic.
+kafka-topics --alter <topic_name> --replication-factor <new_replication_factor>: Alter the replication factor for a topic.
+kafka-topics --alter <topic_name> --config <config_key>=<config_value>: Alter the configuration for a topic.
+kafka-topics --delete <topic_name>: Delete a topic.
+kafka-configs --list: List all configuration overrides for the cluster.
+kafka-configs --alter <config_name> <config_value>: Alter a configuration override for the cluster.
+kafka-configs --delete <config_name>: Delete a configuration override for the cluster.
+kafka-broker-list: List all brokers in the cluster.
+kafka-broker-describe <broker_id>: Describe a broker, including its configuration and partitions.
+kafka-broker-remove <broker_id>: Remove a broker from the cluster.
+kafka-verify: Verify the integrity of the Kafka cluster.
+
+Producer Management:-
+
+kafka-console-producer --broker-list <broker_list> --topic <topic_name>: Start a console producer to send messages to a topic.
+kafka-console-producer --broker-list <broker_list> --topic <topic_name> --property "parse.key=true" --property "key.separator=,": Start a console producer to send messages to a topic with key-value pairs.
+kafka-console-producer --broker-list <broker_list> --topic <topic_name> --property "acks=all": Start a console producer to send messages to a topic, with acks set to all.
+kafka-console-producer --broker-list <broker_list> --topic <topic_name> --property "retries=3": Start a console producer to send messages to a topic, with retries set to 3.
+kafka-console-producer --broker-list <broker_list> --topic <topic_name> --property "batch.size=100": Start a console producer to send messages to a topic, with batch size set to 100.
+kafka-producer-perf-test --topic <topic_name> --num-records <num_records> --record-size <record_size>: Run a performance test for producing messages to a topic.
+kafka-producer-perf-test --topic <topic_name> --num-records <num_records> --record-size <record_size> --throughput <throughput>: Run a performance test for producing messages to a topic, with custom throughput.
+
+Consumer Management:-
+
+kafka-console-consumer --bootstrap-server <bootstrap_server> --topic <topic_name>: Start a console consumer to consume messages from a topic.
+kafka-console-consumer --bootstrap-server <bootstrap_server> --topic <topic_name> --from-beginning: Start a console consumer to consume messages from a topic, from the beginning.
+kafka-console-consumer --bootstrap-server <bootstrap_server> --topic <topic_name> --offset <offset>: Start a console consumer to consume messages from a topic, from a specific offset.
+kafka-console-consumer --bootstrap-server <bootstrap_server> --topic <topic_name> --partition <partition>: Start a console consumer to consume messages from a topic, from a specific partition.
+kafka-consumer-groups --list: List all consumer groups in the cluster.
+kafka-consumer-groups --describe <group_name>: Describe a consumer group, including its members and subscription.
+kafka-consumer-groups --delete <group_name>: Delete a consumer group.
+kafka-consumer-groups --list --bootstrap-server <bootstrap_server>: List all consumer groups in the cluster, using a specific bootstrap server.
+kafka-consumer-groups --describe <group_name> --bootstrap-server <bootstrap_server>: Describe a consumer group, including its members and subscription, using a specific bootstrap server.
+
+Offset Management:-
+
+kafka-consumer-offsets --list: List the consumer offsets for a topic.
+kafka-consumer-offsets --describe <group_name> <topic_name>: Describe the consumer offsets for
+
+===========================================================================Jenkins Commands=================================================================
+Here is a comprehensive list of Jenkins commands, grouped by category:
+
+Jenkins CLI Commands:-
+
+jenkins-cli.jar help: Display help for Jenkins CLI commands.
+jenkins-cli.jar version: Display the Jenkins version.
+jenkins-cli.jar who-am-i: Display the current user's identity.
+jenkins-cli.jar login: Log in to Jenkins.
+jenkins-cli.jar logout: Log out of Jenkins.
+jenkins-cli.jar list-jobs: List all jobs in Jenkins.
+jenkins-cli.jar get-job <job_name>: Get the configuration of a job.
+jenkins-cli.jar build <job_name>: Build a job.
+jenkins-cli.jar cancel <job_name>: Cancel a running job.
+jenkins-cli.jar disable <job_name>: Disable a job.
+jenkins-cli.jar enable <job_name>: Enable a job.
+jenkins-cli.jar delete-job <job_name>: Delete a job.
+jenkins-cli.jar create-job <job_name>: Create a new job.
+jenkins-cli.jar update-job <job_name>: Update the configuration of a job.
+jenkins-cli.jar get-view <view_name>: Get the configuration of a view.
+jenkins-cli.jar create-view <view_name>: Create a new view.
+jenkins-cli.jar update-view <view_name>: Update the configuration of a view.
+jenkins-cli.jar delete-view <view_name>: Delete a view.
+jenkins-cli.jar get-node <node_name>: Get the configuration of a node.
+jenkins-cli.jar create-node <node_name>: Create a new node.
+jenkins-cli.jar update-node <node_name>: Update the configuration of a node.
+jenkins-cli.jar delete-node <node_name>: Delete a node.
+jenkins-cli.jar get-plugin <plugin_name>: Get the configuration of a plugin.
+jenkins-cli.jar install-plugin <plugin_name>: Install a plugin.
+jenkins-cli.jar uninstall-plugin <plugin_name>: Uninstall a plugin.
+jenkins-cli.jar get-queue: Get the queue of pending builds.
+jenkins-cli.jar cancel-queue <queue_id>: Cancel a pending build.
+jenkins-cli.jar get-build <job_name> <build_number>: Get the details of a build.
+jenkins-cli.jar get-console <job_name> <build_number>: Get the console output of a build.
+jenkins-cli.jar get-artifact <job_name> <build_number> <artifact_name>: Get an artifact from a build.
+
+Jenkins Script Console Commands:-
+
+println "Hello, World!": Print a message to the console.
+def job = Jenkins.instance.getJob("my_job"): Get a job object.
+def build = job.getLastBuild() : Get the last build of a job.
+build.setResult(hudson.model.Result.SUCCESS) : Set the result of a build.
+def node = Jenkins.instance.getNode("my_node"): Get a node object.
+node.setLabelString("my_label"): Set the label of a node.
+def view = Jenkins.instance.getView("my_view"): Get a view object.
+view.addJob(job): Add a job to a view.
+def plugin = Jenkins.instance.getPlugin("my_plugin"): Get a plugin object.
+plugin.setEnabled(true): Enable a plugin.
+
+Jenkins Groovy Script Commands:-
+
+import jenkins.model.Jenkins: Import the Jenkins model.
+Jenkins.instance.getJob("my_job").build(): Build a job.
+Jenkins.instance.getNode("my_node").setOffline(true): Set a node offline.
+Jenkins.instance.getView("my_view").addJob(Jenkins.instance.getJob("my_job")): Add a job to a view.
+Jenkins.instance.getPlugin("my_plugin").setEnabled(true): Enable a plugin.
+
+Jenkins Pipeline Commands:-
+
+pipeline { ... }: Define a pipeline.
+node { ... }: Define a node in a pipeline.
+stage { ... }: Define a stage in a pipeline.
+step { ... }: Define a step in a pipeline.
+sh "command": Execute a shell command.
+bat "command": Execute a batch command.
+powershell "command": Execute a PowerShell command.
+checkout scm: Check out a source code management system.
+git "command": Execute a Git command
+=================================================================Git Commands===============================================================================
+Here is a comprehensive list of Git and GitHub commands, grouped by category:
+
+Git Basics:-
+
+git init: Initialize a new Git repository.
+git add <file>: Stage a file for the next commit.
+git add.: Stage all changes in the current directory and subdirectories.
+git commit -m "<message>": Commit changes with a meaningful commit message.
+git log: Display a log of all commits made to the repository.
+git status: Display the status of the repository, including any changes that need to be committed.
+
+Git Branching:-
+
+git branch <branch_name>: Create a new branch.
+git checkout <branch_name>: Switch to a different branch.
+git checkout -b <branch_name>: Create a new branch and switch to it.
+git merge <branch_name>: Merge changes from another branch into the current branch.
+git branch -d <branch_name>: Delete a branch.
+git branch -a: List all branches, including remote branches.
+
+Git Remote:-
+
+git remote add <name> <url>: Add a remote repository to the local repository.
+git remote -v: List all remote repositories.
+git fetch <remote>: Fetch changes from a remote repository.
+git push <remote> <branch>: Push changes to a remote repository.
+git pull <remote> <branch>: Pull changes from a remote repository.
+git remote rm <name>: Remove a remote repository.
+
+Git Tagging:-
+
+git tag <tag_name>: Create a new tag.
+git tag -a <tag_name> -m "<message>": Create a new annotated tag.
+git tag -d <tag_name>: Delete a tag.
+git tag -l: List all tags.
+
+Git Stashing:-
+
+git stash: Stash changes to be reapplied later.
+git stash list: List all stashed changes.
+git stash apply: Apply a stashed change.
+git stash drop: Drop a stashed change.
+
+Git Reset:-
+
+git reset --hard: Reset the repository to the last commit, discarding all changes.
+git reset --soft: Reset the repository to the last commit, preserving changes.
+git reset <commit>: Reset the repository to a specific commit.
+
+Git Clean:-
+
+git clean -n: Dry-run a clean operation, showing what would be removed.
+git clean -f: Force a clean operation, removing untracked files and directories.
+
+GitHub:-
+
+gh auth login: Log in to GitHub using the GitHub CLI.
+gh auth logout: Log out of GitHub using the GitHub CLI.
+gh repo create <repo_name>: Create a new repository on GitHub.
+gh repo clone <repo_name>: Clone a repository from GitHub.
+gh repo fork <repo_name>: Fork a repository on GitHub.
+gh issue create <title>: Create a new issue on GitHub.
+gh issue list: List all issues on a repository.
+gh pull-request create <title>: Create a new pull request on GitHub.
+gh pull-request list: List all pull requests on a repository.
+gh release create <tag_name>: Create a new release on GitHub.
+
+GitHub CLI:-
+
+gh api <endpoint>: Make a request to the GitHub API using the GitHub CLI.
+gh config <key> <value>: Set a configuration value for the GitHub CLI.
+gh config -l: List all configuration values for the GitHub CLI.
+
+Git Hooks:-
+
+git hooks --install: Install Git hooks.
+git hooks --uninstall: Uninstall Git hooks.
+git hooks --list: List all installed Git hooks.
+
+Git Submodules:-
+
+git submodule add <repo_url>: Add a submodule to the repository.
+git submodule init: Initialize a submodule.
+git submodule update: Update a submodule.
+git submodule foreach <command>: Run a command on each submodule.
+
+Git Archive:-
+
+git archive --format=<format> <tree-ish>: Create an archive of the repository.
+git archive --list: List all available archive formats.
+
+Git Filter-branch:-
+
+git filter-branch -d <directory>: Rewrite the commit history of a branch.
+git filter-branch -r <repository>: Rewrite the commit history of a repository.
+
+Git Worktree:-
+
+git worktree add <path>: Add a new work
+==========================================================Linux Commands====================================================================================
+File and Directory Management:-
+
+mkdir - Create a new directory
+rmdir - Remove an empty directory
+rm - Remove a file or directory
+cp - Copy a file or directory
+mv - Move or rename a file or directory
+touch - Create a new file
+ln - Create a symbolic link
+chmod - Change the permissions of a file or directory
+chown - Change the ownership of a file or directory
+chgrp - Change the group ownership of a file or directory
+ls - List files and directories
+dir - List files and directories
+vdir - List files and directories with verbose output
+find - Search for files based on various criteria
+locate - Search for files based on their names
+which - Locate a command or file
+whereis - Locate a command or file
+file - Determine the type of a file
+stat - Display file status
+du - Display disk usage
+df - Display disk free space
+
+File Editing and Viewing:-
+
+nano - Edit a file using the nano editor
+vim - Edit a file using the vim editor
+emacs - Edit a file using the emacs editor
+gedit - Edit a file using the gedit editor
+cat - Display the contents of a file
+tac - Display the contents of a file in reverse order
+head - Display the first few lines of a file
+tail - Display the last few lines of a file
+less - Display the contents of a file one page at a time
+more - Display the contents of a file one page at a time
+grep - Search for a pattern in a file
+egrep - Search for a pattern in a file using extended regular expressions
+fgrep - Search for a pattern in a file using fixed strings
+diff - Compare the contents of two files
+cmp - Compare the contents of two files byte by byte
+
+System Information and Management:-
+
+uname - Display system information
+uptime - Display system uptime
+w - Display information about currently logged in users
+who - Display information about currently logged in users
+whoami - Display the current user's username
+hostname - Display the system's hostname
+domainname - Display the system's domain name
+arch - Display the system's architecture
+lscpu - Display CPU information
+lsmem - Display memory information
+lsblk - Display block device information
+lsusb - Display USB device information
+lspci - Display PCI device information
+lsmod - Display loaded kernel modules
+modprobe - Load or unload a kernel module
+
+User and Group Management:-
+
+useradd - Create a new user
+usermod - Modify an existing user
+userdel - Delete a user
+groupadd - Create a new group
+groupmod - Modify an existing group
+groupdel - Delete a group
+passwd - Change a user's password
+chpasswd - Change multiple users' passwords
+chsh - Change a user's shell
+chfn - Change a user's finger information
+id - Display a user's ID and group information
+groups - Display a user's group membership
+newgrp - Change a user's group membership
+
+Network and Connectivity:-
+
+ip - Manage IP addresses and routes
+ifconfig - Configure network interfaces
+netstat - Display network connections and statistics
+ping - Test network connectivity
+traceroute - Trace the path of network packets
+dig - Perform DNS lookups
+nslookup - Perform DNS lookups
+ssh - Establish a secure shell connection
+scp - Copy files over a secure shell connection
+sftp - Transfer files over a secure shell connection
+telnet - Establish
+
+Process Management:-
+
+ps - Display process information
+top - Display process information in real-time
+htop - Display process information in real-time with a graphical interface
+kill - Kill a process
+pkill - Kill a process by name
+pgrep - Search for a process by name
+renice - Change the priority of a process
+nice - Run a command with a modified priority
+nohup - Run a command immune to hangups
+bg - Run a command in the background
+fg - Bring a background job to the foreground
+jobs - Display information about background jobs
+wait - Wait for a background job to complete
+
+Security and Access Control:-
+
+sudo - Run a command with superuser privileges
+su - Switch to a different user account
+chroot - Change the root directory of a process
+chmod - Change the permissions of a file or directory
+chown - Change the ownership of a file or directory
+chgrp - Change the group ownership of a file or directory
+setfacl - Set the access control list (ACL) of a file or directory
+getfacl - Get the access control list (ACL) of a file or directory
+selinux - Manage SELinux security contexts
+apparmor - Manage AppArmor security profiles
+
+System Configuration:-
+
+sysctl - Configure kernel parameters
+sysctl.conf - Configure kernel parameters persistently
+udev - Manage device events and permissions
+udevadm - Manage device events and permissions
+systemd - Manage system services and targets
+systemctl - Manage system services and targets
+journalctl - Manage system logs
+logrotate - Rotate system logs
+cron - Schedule tasks to run at specific times
+crontab - Edit cron job schedules
+
+Package Management:-
+
+apt - Manage packages on Debian-based systems
+apt-get - Manage packages on Debian-based systems
+aptitude - Manage packages on Debian-based systems
+yum - Manage packages on RPM-based systems
+dnf - Manage packages on RPM-based systems
+pip - Manage Python packages
+gem - Manage Ruby packages
+npm - Manage Node.js packages
+bower - Manage front-end packages
+composer - Manage PHP packages
+
+Text Processing:-
+
+sed - Stream editor for modifying text
+awk - Pattern scanning and processing language
+grep - Search for patterns in text
+egrep - Search for patterns in text using extended regular expressions
+fgrep - Search for patterns in text using fixed strings
+cut - Cut out parts of lines of text
+paste - Merge lines of text
+sort - Sort lines of text
+uniq - Remove duplicate lines of text
+tr - Translate characters in text
+
+Miscellaneous:-
+
+man - Display manual pages for commands and functions
+info - Display information about commands and functions
+whatis - Display a brief description of a command or function
+apropos - Search for manual pages and information
+alias - Create an alias for a command
+unalias - Remove an alias for a command
+history - Display command history
+fc - Edit and re-execute a command from history
+bind - Bind a key to a command or function
+stty - Change terminal settings
+
+File Compression and Archiving:-
+
+tar - Create and extract tar archives
+gzip - Compress files using the gzip algorithm
+gunzip - Decompress files compressed with gzip
+bzip2 - Compress files using the bzip2 algorithm
+bunzip2 - Decompress files compressed with bzip2
+xz - Compress files using the xz algorithm
+unxz - Decompress files compressed with xz
+zip - Create and extract zip archives
+unzip - Extract zip archives
+rar - Create and extract rar archives
+unrar - Extract rar archives
+
+System Monitoring and Debugging:-
+
+top - Display process information in real-time
+htop - Display process information in real-time with a graphical interface
+mpstat - Display CPU statistics
+vmstat - Display virtual memory statistics
+iostat - Display I/O statistics
+sysdig - Capture and display system calls and events
+strace - Trace system calls and signals
+ltrace - Trace library calls
+tcpdump - Capture and display network packets
+wireshark - Capture and display network packets with a graphical interface
+
+Network Configuration and Troubleshooting:-
+
+ip - Manage IP addresses and routes
+ifconfig - Configure network interfaces
+netstat - Display network connections and statistics
+nslookup - Perform DNS lookups
+dig - Perform DNS lookups
+ping - Test network connectivity
+traceroute - Trace the path of network packets
+arp - Manage ARP cache
+route - Manage routing tables
+ssh - Establish a secure shell connection
+
+User and Group Management:-
+
+useradd - Create a new user
+usermod - Modify an existing user
+userdel - Delete a user
+groupadd - Create a new group
+groupmod - Modify an existing group
+groupdel - Delete a group
+passwd - Change a user's password
+chpasswd - Change multiple users' passwords
+chsh - Change a user's shell
+chfn - Change a user's finger information
+
+System Backup and Recovery:-
+
+dd - Copy and convert data
+dump - Backup file systems
+restore - Restore file systems from backups
+tar - Create and extract tar archives
+rsync - Synchronize files and directories
+cpio - Create and extract cpio archives
+mt - Control magnetic tape devices
+ddrescue - Recover data from damaged or failing storage devices
+testdisk - Recover data from damaged or failing storage devices
+photorec - Recover data from damaged or failing storage devices
+
+System Installation and Configuration:-
+
+apt - Manage packages on Debian-based systems
+apt-get - Manage packages on Debian-based systems
+aptitude - Manage packages on Debian-based systems
+yum - Manage packages on RPM-based systems
+dnf - Manage packages on RPM-based systems
+zypper - Manage packages on openSUSE-based systems
+dpkg - Manage packages on Debian-based systems
+rpm - Manage packages on RPM-based systems
+sysctl - Configure kernel parameters
+systemd - Manage system services and targets
+
+File and Directory Management:-
+
+mkdir - Create a new directory
+rmdir - Remove an empty directory
+rm - Remove files and directories
+cp - Copy files and directories
+mv - Move or rename files and directories
+ln - Create a hard link or symbolic link
+find - Search for files and directories
+locate - Search for files and directories using a database
+which - Locate the executable of a command
+whereis - Locate the executable, source, and manual of a command
+
+Text Processing:-
+
+cat - Concatenate and display files
+tac - Concatenate and display files in reverse order
+head - Display the first lines of a file
+tail - Display the last lines of a file
+less - Display a file one page at a time
+more - Display a file one page at a time
+fmt - Format text
+pr - Format text for printing
+fold - Fold lines of text
+expand - Expand tabs to spaces
+
+System Information:-
+
+uname - Display system information
+hostname - Display the hostname of the system
+uptime - Display the system uptime
+w - Display information about logged-in users
+who - Display information about logged-in users
+whoami - Display the current user
+id - Display the current user's ID and group membership
+groups - Display the current user's group membership
+last - Display a list of recent logins
+lastlog - Display a list of recent logins
+
+Security and Access Control:-
+
+chmod - Change the permissions of a file or directory
+chown - Change the ownership of a file or directory
+chgrp - Change the group ownership of a file or directory
+setfacl - Set the access control list (ACL) of a file or directory
+getfacl - Get the access control list (ACL) of a file or directory
+selinux - Manage SELinux security contexts
+apparmor - Manage AppArmor security profiles
+sudo - Run a command with superuser privileges
+su - Switch to a different user account
+visudo - Edit the sudoers file
+
+System Maintenance:-
+
+cron - Schedule tasks to run at specific times
+crontab - Edit cron job schedules
+at - Schedule tasks to run at specific times
+batch - Schedule tasks to run in batch mode
+anacron - Schedule tasks to run at specific times
+logrotate - Rotate system logs
+syslog-ng - Manage system logs
+rsyslog - Manage system logs
+systemd-journald - Manage system logs
+journalctl - Display system logs
+=================================================================Ansible Commands===========================================================================
+Ansible Core Commands:-
+
+ansible - Run ad-hoc commands on nodes
+ansible-playbook - Run playbooks on nodes
+ansible-config - Display Ansible configuration
+ansible-doc - Display documentation for modules and plugins
+ansible-galaxy - Manage roles and collections
+ansible-inventory - Manage inventory files
+ansible-console - Interactive shell for running ad-hoc commands
+ansible-pull - Pull playbooks from a source control system
+
+Ansible Ad-Hoc Commands:-
+
+ansible all -m ping - Ping all nodes in the inventory
+ansible all -m command -a "uptime" - Run the uptime command on all nodes
+ansible all -m shell -a "echo hello" - Run a shell command on all nodes
+ansible all -m copy -a "content=hello dest=/tmp/hello" - Copy a file to all nodes
+ansible all -m template -a "src=template.j2 dest=/tmp/template" - Template a file on all nodes
+
+Ansible Playbook Commands:-
+
+ansible-playbook playbook.yml - Run a playbook on nodes
+ansible-playbook playbook.yml -i inventory - Run a playbook on nodes with a custom inventory
+ansible-playbook playbook.yml -t tag - Run a playbook on nodes with a specific tag
+ansible-playbook playbook.yml -e "variable=value" - Run a playbook on nodes with extra variables
+ansible-playbook playbook.yml --step - Run a playbook on nodes with step-by-step mode
+
+Ansible Galaxy Commands:-
+
+ansible-galaxy init role - Initialize a new role
+ansible-galaxy init collection - Initialize a new collection
+ansible-galaxy install role - Install a role from Galaxy
+ansible-galaxy install collection - Install a collection from Galaxy
+ansible-galaxy list - List installed roles and collections
+ansible-galaxy remove role - Remove a role from Galaxy
+ansible-galaxy remove collection - Remove a collection from Galaxy
+
+Ansible Inventory Commands:-
+
+ansible-inventory --list - List all nodes in the inventory
+ansible-inventory --graph - Display the inventory graph
+ansible-inventory --host <host> - Display information about a specific host
+ansible-inventory --yaml - Display the inventory in YAML format
+ansible-inventory --json - Display the inventory in JSON format
+
+Ansible Console Commands:-
+
+ansible-console - Start an interactive shell for running ad-hoc commands
+ansible-console -i inventory - Start an interactive shell with a custom inventory
+ansible-console -m module - Start an interactive shell with a specific module
+
+Ansible Pull Commands:-
+
+ansible-pull -s playbook.yml - Pull a playbook from a source control system
+ansible-pull -s playbook.yml -i inventory - Pull a playbook from a source control system with a custom inventory
+ansible-pull -s playbook.yml -t tag - Pull a playbook from a source control system with a specific tag
+
+Ansible Debugging Commands:-
+
+ansible-playbook --syntax-check playbook.yml - Check the syntax of a playbook
+ansible-playbook --list-tasks playbook.yml - List the tasks in a playbook
+ansible-playbook --list-tags playbook.yml - List the tags in a playbook
+ansible-playbook --start-at-task playbook.yml - Start a playbook from a specific task
+ansible-playbook --step playbook.yml - Run a playbook in step-by-step mode
+
+Ansible Module Commands:-
+
+ansible-doc -l - List all available modules
+ansible-doc -s module - Display the documentation for a specific module
+ansible-doc -t module - Display the examples for a specific module
+ansible-module -l - List all available modules
+ansible-module -s module - Display the documentation for a specific module
+
+Ansible Role Commands:-
+
+ansible-galaxy role init role - Initialize a new role
+ansible-galaxy role build role - Build a role
+ansible-galaxy role list - List all available roles
+ansible-galaxy role info role - Display information about a specific role
+ansible-galaxy role delete role - Delete a role
+
+Ansible Collection Commands:-
+
+ansible-galaxy collection init collection - Initialize a new collection
+ansible-galaxy collection build collection - Build a collection
+ansible-galaxy collection list - List all available collections
+ansible-galaxy collection info collection - Display information about a specific collection
+ansible-galaxy collection delete collection - Delete a collection
+
+Ansible Inventory Commands:-
+
+ansible-inventory --export - Export the inventory to a file
+ansible-inventory --import - Import the inventory from a file
+ansible-inventory --merge - Merge multiple inventory files
+ansible-inventory --split - Split a large inventory file into smaller files
+ansible-inventory --convert - Convert an inventory file from one format to another
+
+Ansible Configuration Commands:-
+
+ansible-config dump - Display the Ansible configuration
+ansible-config list - List all available configuration options
+ansible-config get - Get the value of a specific configuration option
+ansible-config set - Set the value of a specific configuration option
+ansible-config reset - Reset the Ansible configuration to its default values
+
+Ansible Plugin Commands:-
+
+ansible-plugin doc - Display the documentation for a plugin
+ansible-plugin list - List all available plugins
+ansible-plugin info - Display information about a specific plugin
+ansible-plugin enable - Enable a plugin
+ansible-plugin disable - Disable a plugin
+===============================================================Docker File creation=========================================================================
+
+Dockerfile Commands:-
+
+FROM - Specify the base image for the new image
+RUN - Execute a command in the shell
+CMD - Set the default command to run when the container starts
+ENTRYPOINT - Set the default entrypoint for the container
+WORKDIR - Set the working directory in the container
+ENV - Set environment variables
+EXPOSE - Expose a port or a range of ports
+VOLUME - Create a mount point for a volume
+USER - Set the user or group to use when running the container
+COPY - Copy files or directories from the build context into the container
+ADD - Add files or directories from the build context into the container (similar to COPY, but can also extract archives)
+LABEL - Add metadata to the image
+MAINTAINER - Set the maintainer of the image (deprecated, use LABEL instead)
+ARG - Define an argument that can be passed to the Dockerfile
+ONBUILD - Trigger a command when the image is used as a base image
+
+Docker Build Commands:-
+
+docker build - Build an image from a Dockerfile
+docker build -t <image-name> - Build an image with a specific name
+docker build -f <dockerfile> - Build an image from a specific Dockerfile
+docker build --no-cache - Build an image without using the cache
+docker build --pull - Pull the latest version of the base image before building
+docker build --rm - Remove intermediate containers after building
+docker build --force-rm - Remove intermediate containers even if the build fails
+docker build --compress - Compress the build context using gzip
+docker build --squash - Squash the layers of the image after building
+
+Docker Image Commands:-
+
+docker images - List all available images
+docker images -a - List all available images, including intermediate images
+docker images -q - List the IDs of all available images
+docker image ls - List all available images (alternative to docker images)
+docker image rm - Remove an image
+docker image prune - Remove unused images
+docker image tag - Tag an image with a new name
+docker image inspect - Display detailed information about an image
+
+Docker Container Commands:-
+
+docker run - Run a container from an image
+docker run -it - Run a container in interactive mode
+docker run -d - Run a container in detached mode
+docker run -p - Map a container port to a host port
+docker run -v - Mount a volume to a container
+docker run --name - Assign a name to a container
+docker run --rm - Remove the container when it exits
+docker container ls - List all running containers
+docker container stop - Stop a running container
+docker container rm - Remove a stopped container
